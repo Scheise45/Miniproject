@@ -3,12 +3,10 @@ import requests
 
 
 def get_map_image(filename="map.png"):
-    server_address = 'https://static-maps.yandex.ru/v1?'
-    api_key = 'f3a0fe3a-b07e-4840-a1da-06f18b2ddf13'
-    ll_spn = 'll=37.530887,55.703118&spn=0.002,0.002'
+    server_address = "https://static-maps.yandex.ru/1.x/?"
+    ll_spn = "ll=0,0&spn=180,90&l=map"  # Полная карта мира
 
-    # Формируем запрос
-    map_request = f"{server_address}{ll_spn}&apikey={api_key}"
+    map_request = f"{server_address}{ll_spn}"
     response = requests.get(map_request)
 
     if not response:
